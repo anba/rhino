@@ -1750,6 +1750,13 @@ public class Context
     }
 
     /**
+     * Implementation of JS_ValueToSource
+     */
+    public static String valueToSource(Object value) {
+        return ScriptRuntime.valueToSource(value);
+    }
+
+    /**
      * Rethrow the exception wrapping it as the script runtime exception.
      * Unless the exception is instance of {@link EcmaError} or
      * {@link EvaluatorException} it will be wrapped as

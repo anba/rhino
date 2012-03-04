@@ -859,7 +859,18 @@ public class ScriptRuntime {
 
     }
 
+    static String valueToSource(Object value)
+    {
+        return uneval(null, null, value, true);
+    }
+
     static String uneval(Context cx, Scriptable scope, Object value)
+    {
+        return uneval(cx, scope, value, false);
+    }
+
+    private static String uneval(Context cx, Scriptable scope, Object value,
+                                 boolean valueToSource)
     {
         if (value == null) {
             return "null";
@@ -893,10 +904,15 @@ public class ScriptRuntime {
                 Object v = ScriptableObject.getProperty(obj, "toSource");
                 if (v instanceof Function) {
                     Function f = (Function)v;
+                    if (valueToSource) {
+                        cx = Context.getContext();
+                        scope = f.getParentScope();
+                    }
                     return toString(f.call(cx, scope, obj, emptyArgs));
                 }
             }
-            return toString(value);
+            // Firefox returns "null" in this case, but "{}" seems more useful
+            return "{}";
         }
         warnAboutNonJSObject(value);
         return value.toString();

@@ -506,7 +506,7 @@ public class Main
                           source.trim().startsWith("function")))
                     {
                         try {
-                            ps.println(Context.toString(result));
+                            ps.println(Context.valueToSource(result));
                         } catch (RhinoException rex) {
                             ToolErrorReporter.reportException(
                                 cx.getErrorReporter(), rex);
