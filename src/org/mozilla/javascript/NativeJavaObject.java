@@ -954,10 +954,6 @@ WrapFactory#wrap(Context, Scriptable, Object, Class)}
         initMembers();
     }
 
-    protected Object getUnderlyingObject() {
-        return javaObject;
-    }
-
     /**
      * The prototype of this object.
      */
