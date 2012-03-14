@@ -34,6 +34,7 @@
  *   Milen Nankov
  *   Hannes Wallnoefer
  *   Andrew Wason
+ *   André Bargull
  *
  * Alternatively, the contents of this file may be used under the terms of
  * the GNU General Public License Version 2 or later (the "GPL"), in which
@@ -859,18 +860,18 @@ public class ScriptRuntime {
 
     }
 
-    static String valueToSource(Object value)
+    static String valueToSource(Object value) 
     {
         return uneval(null, null, value, true);
     }
-
+    
     static String uneval(Context cx, Scriptable scope, Object value)
     {
         return uneval(cx, scope, value, false);
     }
-
-    private static String uneval(Context cx, Scriptable scope, Object value,
-                                 boolean valueToSource)
+    
+    private static String uneval(Context cx, Scriptable scope, Object value, 
+        boolean valueToSource)
     {
         if (value == null) {
             return "null";
@@ -900,19 +901,25 @@ public class ScriptRuntime {
             Scriptable obj = (Scriptable)value;
             // Wrapped Java objects won't have "toSource" and will report
             // errors for get()s of nonexistent name, so use has() first
+            // this is true except of java.lang.String which has a prototype of NativeString
+            if(obj instanceof NativeJavaObject) {
+                Object str = ((NativeJavaObject)obj).getUnderlyingObject();
+                if(str instanceof String ) {
+                    return "\"" + (String)str + "\"";
+                }
+            }
             if (ScriptableObject.hasProperty(obj, "toSource")) {
                 Object v = ScriptableObject.getProperty(obj, "toSource");
                 if (v instanceof Function) {
                     Function f = (Function)v;
-                    if (valueToSource) {
+                    if( (valueToSource)) {
                         cx = Context.getContext();
                         scope = f.getParentScope();
                     }
                     return toString(f.call(cx, scope, obj, emptyArgs));
                 }
             }
-            // Firefox returns "null" in this case, but "{}" seems more useful
-            return "{}";
+            return toString(value);
         }
         warnAboutNonJSObject(value);
         return value.toString();

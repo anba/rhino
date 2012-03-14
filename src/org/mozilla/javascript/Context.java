@@ -23,6 +23,7 @@
  *
  * Contributor(s):
  *    Bob Jervis
+ *    André Bargull
  *
  * Alternatively, the contents of this file may be used under the terms of
  * the GNU General Public License Version 2 or later (the "GPL"), in which
@@ -1748,11 +1749,12 @@ public class Context
             throw ex2;
         }
     }
-
+    
     /**
-     * Implementation of JS_ValueToSource
+     * Imlementation of JS_ValueToSource
      */
-    public static String valueToSource(Object value) {
+    public static String valueToSource(Object value) 
+    {
         return ScriptRuntime.valueToSource(value);
     }
 
