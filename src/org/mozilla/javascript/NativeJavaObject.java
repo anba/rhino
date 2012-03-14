@@ -953,7 +953,7 @@ WrapFactory#wrap(Context, Scriptable, Object, Class)}
 
         initMembers();
     }
-    
+
     protected Object getUnderlyingObject() {
         return javaObject;
     }
