@@ -1,5 +1,7 @@
 package org.mozilla.javascript.tests;
 
+import static org.junit.Assume.assumeTrue;
+
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileNotFoundException;
@@ -13,8 +15,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -96,6 +98,12 @@ public class MozillaSuiteTest {
         char[] buf = new char[length];
         new FileReader(f).read(buf, 0, length);
         return new String(buf);
+    }
+
+    @BeforeClass
+    public static void setUpClass() {
+        // disable this test suite in favour of MozillaSuiteTest2
+        assumeTrue(false);
     }
 
     @Parameters
