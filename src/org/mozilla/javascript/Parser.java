@@ -1282,6 +1282,7 @@ public class Parser
             init = forLoopInit(tt);
 
             if (matchToken(Token.IN)) {
+                markDestructuring(init);
                 isForIn = true;
                 inPos = ts.tokenBeg - forPos;
                 cond = expr();  // object over which we're iterating
@@ -1368,7 +1369,6 @@ public class Parser
                 init = variables(tt, ts.tokenBeg, false);
             } else {
                 init = expr();
-                markDestructuring(init);
             }
             return init;
         } finally {
@@ -2935,51 +2935,67 @@ public class Parser
         boolean after_lb_or_comma = true;
         int afterComma = -1;
         int skipCount = 0;
-        for (;;) {
-            int tt = peekToken();
-            if (tt == Token.COMMA) {
-                consumeToken();
-                afterComma = ts.tokenEnd;
-                if (!after_lb_or_comma) {
-                    after_lb_or_comma = true;
-                } else {
-                    elements.add(new EmptyExpression(ts.tokenBeg, 1));
-                    skipCount++;
-                }
-            } else if (tt == Token.RB) {
-                consumeToken();
-                // for ([a,] in obj) is legal, but for ([a] in obj) is
-                // not since we have both key and value supplied. The
-                // trick is that [a,] and [a] are equivalent in other
-                // array literal contexts. So we calculate a special
-                // length value just for destructuring assignment.
-                end = ts.tokenEnd;
-                pn.setDestructuringLength(elements.size() +
-                                          (after_lb_or_comma ? 1 : 0));
-                pn.setSkipCount(skipCount);
-                if (afterComma != -1)
-                    warnTrailingComma(pos, elements, afterComma);
-                break;
-            } else if (tt == Token.FOR && !after_lb_or_comma
-                       && elements.size() == 1) {
-                return arrayComprehension(elements.get(0), pos);
-            } else if (tt == Token.EOF) {
-                reportError("msg.no.bracket.arg");
-                break;
-            } else {
-                if (!after_lb_or_comma) {
+        // always create a temporary scope in case we end up with an array
+        // comprehension, meh...
+        Scope oldScope = currentScope;
+        Scope tempScope = createScopeNode(Token.ARRAYCOMP, ts.lineno);
+        pushScope(tempScope);
+        try {
+            for (;;) {
+                int tt = peekToken();
+                if (tt == Token.COMMA) {
+                    consumeToken();
+                    afterComma = ts.tokenEnd;
+                    if (!after_lb_or_comma) {
+                        after_lb_or_comma = true;
+                    } else {
+                        elements.add(new EmptyExpression(ts.tokenBeg, 1));
+                        skipCount++;
+                    }
+                } else if (tt == Token.RB) {
+                    consumeToken();
+                    // for ([a,] in obj) is legal, but for ([a] in obj) is
+                    // not since we have both key and value supplied. The
+                    // trick is that [a,] and [a] are equivalent in other
+                    // array literal contexts. So we calculate a special
+                    // length value just for destructuring assignment.
+                    end = ts.tokenEnd;
+                    pn.setDestructuringLength(elements.size() +
+                                              (after_lb_or_comma ? 1 : 0));
+                    pn.setSkipCount(skipCount);
+                    if (afterComma != -1)
+                        warnTrailingComma(pos, elements, afterComma);
+                    break;
+                } else if (tt == Token.FOR && !after_lb_or_comma
+                           && elements.size() == 1) {
+                    return arrayComprehension(elements.get(0), pos);
+                } else if (tt == Token.EOF) {
                     reportError("msg.no.bracket.arg");
+                    break;
+                } else {
+                    if (!after_lb_or_comma) {
+                        reportError("msg.no.bracket.arg");
+                    }
+                    elements.add(assignExpr());
+                    after_lb_or_comma = false;
+                    afterComma = -1;
                 }
-                elements.add(assignExpr());
-                after_lb_or_comma = false;
-                afterComma = -1;
+            }
+
+            // replace temporary scope with actual scope
+            currentScope.replaceWith(oldScope);
+            popScope();
+
+            for (AstNode e : elements) {
+                pn.addElement(e);
+            }
+            pn.setLength(end - pos);
+            return pn;
+        } finally {
+            if (currentScope == tempScope) {
+                popScope();
             }
         }
-        for (AstNode e : elements) {
-            pn.addElement(e);
-        }
-        pn.setLength(end - pos);
-        return pn;
     }
 
     /**
@@ -3005,6 +3021,7 @@ public class Parser
         }
         mustMatchToken(Token.RB, "msg.no.bracket.arg");
         ArrayComprehension pn = new ArrayComprehension(pos, ts.tokenEnd - pos);
+        pn.putProp(Node.ARRAY_COMPR_SCOPE, currentScope);
         pn.setResult(result);
         pn.setLoops(loops);
         if (data != null) {

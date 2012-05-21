@@ -243,7 +243,7 @@ public final class IRFactory extends Parser
         // }
 
         int lineno = node.getLineno();
-        Scope scopeNode = createScopeNode(Token.ARRAYCOMP, lineno);
+        Scope scopeNode = (Scope)node.getProp(Node.ARRAY_COMPR_SCOPE);
         String arrayName = currentScriptOrFn.getNextTempName();
         pushScope(scopeNode);
         try {
@@ -310,7 +310,12 @@ public final class IRFactory extends Parser
             iterators[i] = init;
 
             decompiler.addToken(Token.IN);
-            iteratedObjs[i] = transform(acl.getIteratedObject());
+            pushScope(acl);
+            try {
+                iteratedObjs[i] = transform(acl.getIteratedObject());
+            } finally {
+                popScope();
+            }
             decompiler.addToken(Token.RP);
         }
 
