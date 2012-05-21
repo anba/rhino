@@ -1561,6 +1561,8 @@ public class ClassFileWriter {
                 ExceptionTableEntry ete = itsExceptionTable[i];
                 short startPC = (short) getLabelPC(ete.itsStartLabel);
                 short handlerPC = (short) getLabelPC(ete.itsHandlerLabel);
+                assert startPC >= 0 : "overflow=" + (startPC & 0xFFFF);
+                assert handlerPC >= 0 : "overflow=" + (handlerPC & 0xFFFF);
                 SuperBlock handlerSB = getSuperBlockFromOffset(handlerPC);
                 SuperBlock dep = getSuperBlockFromOffset(startPC);
                 deps[handlerSB.getIndex()] = dep;
@@ -4167,6 +4169,7 @@ public class ClassFileWriter {
             for (int i = 0; i < itsExceptionTableTop; i++) {
                 ExceptionTableEntry ete = itsExceptionTable[i];
                 short handlerPC = (short) getLabelPC(ete.itsHandlerLabel);
+                assert handlerPC >= 0 : "overflow=" + (handlerPC & 0xFFFF);
                 addSuperBlockStart(handlerPC);
             }
             Arrays.sort(itsSuperBlockStarts, 0, itsSuperBlockStartsTop);
