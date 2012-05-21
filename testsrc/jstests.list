@@ -1,0 +1,810 @@
+# TODO: description goes here
+
+# e4x/decompilation
+skip script e4x/decompilation/regress-350226.js     # syntax error
+skip script e4x/decompilation/regress-350531.js     # parens in decompilation
+skip script e4x/decompilation/regress-351706.js     # parens in decompilation
+skip script e4x/decompilation/regress-351988.js     # syntax error
+skip script e4x/decompilation/regress-352013.js     # parens in decompilation
+skip script e4x/decompilation/regress-352459.js     # syntax error
+skip script e4x/decompilation/regress-352649.js     # parens in decompilation
+skip script e4x/decompilation/regress-352789.js     # parens in decompilation
+skip script e4x/decompilation/regress-461233.js     # parens in decompilation
+skip script e4x/decompilation/regress-463360.js     # syntax error
+
+# e4x/Expressions
+skip script e4x/Expressions/11.1.4-01.js        # syntax error
+skip script e4x/Expressions/11.1.4-02.js        # syntax error
+skip script e4x/Expressions/11.1.4-03.js        # syntax error
+skip script e4x/Expressions/11.1.4-04.js        # whitespace removed !bug
+skip script e4x/Expressions/11.1.4.js           # '>' in attribute xml-escaped !bug
+skip script e4x/Expressions/11.6.1.js           # whitespace removed !bug
+
+# e4x/extensions
+skip script e4x/extensions/regress-312196.js    # ::function syntax not supported
+skip script e4x/extensions/regress-337226.js    # ::function syntax not supported
+skip script e4x/extensions/regress-352846-01.js # ::function syntax not supported
+skip script e4x/extensions/regress-352846-02.js # ::function syntax not supported
+skip script e4x/extensions/regress-352846-03.js # ::function syntax not supported
+skip script e4x/extensions/regress-374163.js    # ::function syntax not supported
+skip script e4x/extensions/regress-410192.js    # quoting bug!
+skip script e4x/extensions/extensibility.js     # not supported ES5!
+skip script e4x/extensions/regress-595207.js    # ::function syntax not supported
+skip script e4x/extensions/json-stringify-dropping-xml-elements.js  # toJSON() not supported bug!
+skip script e4x/extensions/stringify-xml.js     # toJSON() not supported bug!
+skip script e4x/extensions/xml-as-proto.js      # ::function syntax not supported
+
+# e4x/GC
+skip script e4x/GC/regress-313952-02.js         # ::function syntax not supported
+skip script e4x/GC/regress-339785.js            # different error message
+skip script e4x/GC/regress-357063-01.js         # ::function syntax not supported
+skip script e4x/GC/regress-357063-02.js         # ::function syntax not supported
+
+# e4x/Namespace
+skip script e4x/Namespace/regress-292863.js     # namespace bug!
+
+# e4x/QName
+skip script e4x/QName/regress-619529.js         # Proxy not supported
+
+# e4x/Regress
+slow script e4x/Regress/regress-309897.js
+slow script e4x/Regress/regress-354998.js
+skip script e4x/Regress/regress-257679.js       # syntax error
+skip script e4x/Regress/regress-321547.js       # whitespace in decompilation
+skip script e4x/Regress/regress-322499.js       # syntax error
+skip script e4x/Regress/regress-323338-1.js     # ::function syntax not supported
+skip script e4x/Regress/regress-323338-2.js     # ::function syntax not supported
+skip script e4x/Regress/regress-327564.js       # some e4x bug!
+skip script e4x/Regress/regress-331558.js       # whitespace in decompilation
+skip script e4x/Regress/regress-344455.js       # different error-type/message
+skip script e4x/Regress/regress-350629.js       # some e4x bug!
+skip script e4x/Regress/regress-352097.js       # syntax error
+skip script e4x/Regress/regress-352223.js       # different error-type/message
+skip script e4x/Regress/regress-355478.js       # syntax error
+skip script e4x/Regress/regress-356238-02.js    # some e4x bug!
+skip script e4x/Regress/regress-356238-03.js    # some e4x bug!
+skip script e4x/Regress/regress-369740.js       # ::function syntax not supported
+skip script e4x/Regress/regress-370016.js       # ::function syntax not supported
+skip script e4x/Regress/regress-370048-01.js    # ::function syntax not supported
+skip script e4x/Regress/regress-370048-02.js    # ::function syntax not supported
+skip script e4x/Regress/regress-370372.js       # ::function syntax not supported
+skip script e4x/Regress/regress-371369.js       # ::function syntax not supported
+skip script e4x/Regress/regress-372563.js       # some e4x bug!
+skip script e4x/Regress/regress-373082.js       # ::function syntax not supported
+skip script e4x/Regress/regress-383255.js       # syntax error
+skip script e4x/Regress/regress-587434.js       # ::function syntax not supported
+
+# e4x/TypeConversion
+skip script e4x/TypeConversion/regress-302097.js    # whitespace in decompilation
+
+# e4x/Type
+skip script e4x/Types/9.1.1.9.js            # whitespace in node
+skip script e4x/Types/9.2.1.9.js            # some e4x bug!
+
+# e4x/XML
+slow script e4x/XML/regress-324422-1.js
+skip script e4x/XML/13.4.3.js               # syntax error
+skip script e4x/XML/13.4.4.10.js            # some e4x bug!
+skip script e4x/XML/13.4.4.17.js            # some e4x bug!
+skip script e4x/XML/13.4.4.26.js            # some e4x bug!
+skip script e4x/XML/13.4.4.28.js            # some e4x bug!
+skip script e4x/XML/13.4.4.3-01.js          # whitespace in node
+skip script e4x/XML/13.4.4.3-02.js          # some e4x bug!
+skip script e4x/XML/regress-376773.js       # ::function syntax not supported
+skip script e4x/XML/regress-621464.js       # some e4x bug!
+
+# e4x/XMLList
+skip script e4x/XMLList/regress-373072.js   # ::function syntax not supported
+
+
+# ecma
+skip script ecma/Array/15.4.4.3-2.js        # index properties on Object.prototype, bug!
+skip script ecma/Array/15.4.5.1-1.js        # syntax error, illegal character, bug!
+skip script ecma/Number/0x-without-following-hexdigits.js   # parser bug!
+slow script ecma/Date/15.9.5.10-1.js
+slow script ecma/Date/15.9.5.10-4.js
+slow script ecma/Date/15.9.5.10-5.js
+slow script ecma/Date/15.9.5.10-6.js
+slow script ecma/Date/15.9.5.10-7.js
+slow script ecma/Date/15.9.5.10-8.js
+slow script ecma/Date/15.9.5.10-9.js
+slow script ecma/Date/15.9.5.11-1.js
+slow script ecma/Date/15.9.5.11-4.js
+slow script ecma/Date/15.9.5.12-1.js
+slow script ecma/Date/15.9.5.12-4.js
+slow script ecma/Date/15.9.5.20.js
+slow script ecma/Date/15.9.5.22-1.js
+slow script ecma/Date/15.9.5.22-2.js
+slow script ecma/Date/15.9.5.9.js
+slow script ecma/Expressions/11.10-2.js
+slow script ecma/Expressions/11.10-3.js
+slow script ecma/Expressions/11.7.1.js
+slow script ecma/Expressions/11.7.2.js
+slow script ecma/Expressions/11.7.3.js
+
+
+# ecma_3
+skip script ecma_3/Array/15.4.5.1-01.js             # different error message
+skip script ecma_3/Array/regress-387501.js          # Array.prototype.toString bug!
+skip script ecma_3/Date/15.9.3.2-1.js               # new Date(value) bug!
+skip script ecma_3/Date/15.9.5.5-02.js              # Date.prototype.toLocaleString bug!
+skip script ecma_3/Exceptions/15.11.5.js            # different error message
+skip script ecma_3/Exceptions/regress-181654.js     # Error.prototype.toString bug!
+skip script ecma_3/Exceptions/regress-181914.js     # Error.prototype.toString bug!
+skip script ecma_3/extensions/7.9.1.js              # whitespace in decompilation
+skip script ecma_3/extensions/regress-274152.js     # parser control format character bug!
+skip script ecma_3/extensions/regress-368516.js     # parser control format character bug!
+skip script ecma_3/extensions/regress-430740.js     # parser control format character bug!
+skip script ecma_3/FunExpr/regress-545980.js        # funexpr not supported?
+skip script ecma_3/LexicalConventions/7.4-01.js     # parser bug!
+skip script ecma_3/LexicalConventions/7.8.3-01.js   # parser bug!
+skip script ecma_3/LexicalConventions/7.9.1.js      # different error message
+skip script ecma_3/Number/15.7.4.3-01.js            # Number.prototype.toLocaleString bug!
+skip script ecma_3/Number/15.7.4.6-1.js             # listed as 'fails' in SM, needs investigation
+skip script ecma_3/Number/15.7.4.7-1.js             # listed as 'fails' in SM, needs investigation
+skip script ecma_3/Object/8.6.1-01.js               # options('strict') warning bug!
+skip script ecma_3/Object/8.6.2.6-002.js            # Object.prototype.valueOf called with arg, bug!?
+skip script ecma_3/Operators/order-01.js            # evaluation order bug!
+skip script ecma_3/RegExp/15.10.4.1-6.js            # RegExp invalid flag bug!
+skip script ecma_3/RegExp/regress-188206.js         # invalid RegExp syntax accepted bug!
+skip script ecma_3/RegExp/regress-375711.js         # different error message
+skip script ecma_3/RegExp/regress-375715-01-n.js    # invalid RegExp syntax accepted bug!
+skip script ecma_3/RegExp/regress-375715-04.js      # different error message
+skip script ecma_3/RegExp/regress-436700.js         # large back reference bug!
+skip script ecma_3/String/15.5.4.14.js              # String.prototype.split bug!
+skip script ecma_3/String/regress-392378.js         # listed as 'fails' in SM, needs investigation
+skip script ecma_3/Unicode/regress-352044-01.js     # different error message
+skip script ecma_3_1/Object/regress-444787.js       # different error message
+
+
+# ecma_5
+skip script ecma_5/Array/join-01.js                                     # Array properties on prototype
+skip script ecma_5/Array/length-set-object.js                           # Array.prototype.length bug!
+skip script ecma_5/Array/sort-01.js                                     # Array.prototype.sort bug!
+skip script ecma_5/Array/toString-01.js                                 # Array.prototype.toString bug!
+skip script ecma_5/Array/unshift-01.js                                  # Array.prototype.unshift bug!
+skip script ecma_5/Date/15.9.4.2.js                                     # Date parse ISO bug!
+skip script ecma_5/Date/setTime-argument-shortcircuiting.js             # short-circuit bug in Date.prototype.setTime
+skip script ecma_5/Date/toJSON-01.js                                    # Date.prototype.toJSON bug!
+skip script ecma_5/eval/exhaustive-fun-normalcaller-direct-strictcode.js        # requires strict-mode
+skip script ecma_5/eval/exhaustive-fun-normalcaller-indirect-strictcode.js      # requires strict-mode
+skip script ecma_5/eval/exhaustive-fun-strictcaller-direct-normalcode.js        # requires strict-mode
+skip script ecma_5/eval/exhaustive-fun-strictcaller-direct-strictcode.js        # requires strict-mode
+skip script ecma_5/eval/exhaustive-fun-strictcaller-indirect-strictcode.js      # requires strict-mode
+skip script ecma_5/eval/exhaustive-global-normalcaller-direct-strictcode.js     # requires strict-mode
+skip script ecma_5/eval/exhaustive-global-normalcaller-indirect-strictcode.js   # requires strict-mode
+skip script ecma_5/eval/exhaustive-global-strictcaller-direct-normalcode.js     # requires strict-mode
+skip script ecma_5/eval/exhaustive-global-strictcaller-direct-strictcode.js     # requires strict-mode
+skip script ecma_5/eval/exhaustive-global-strictcaller-indirect-strictcode.js   # requires strict-mode
+skip script ecma_5/eval/strict-eval-json-object-repeated-property-name.js       # requires strict-mode
+skip script ecma_5/Exceptions/error-property-enumerability.js           # Error.protype properties bug!
+skip script ecma_5/Expressions/11.1.5-01.js                             # parser bug!
+skip script ecma_5/Expressions/object-literal-accessor-arguments.js     # parser bug!
+skip script ecma_5/Expressions/object-literal-accessor-property-name.js # parser bug!
+skip script ecma_5/Function/10.2.1.1.6.js                               # requires strict-mode
+skip script ecma_5/Function/15.3.4.3-01.js                              # requires strict-mode
+skip script ecma_5/Function/arguments-caller-callee.js                  # requires strict-mode
+skip script ecma_5/Function/function-caller.js                          # requires strict-mode
+skip script ecma_5/Function/strict-arguments.js                         # requires strict-mode
+skip script ecma_5/Function/arguments-property-attributes.js            # requires strict-mode
+skip script ecma_5/Function/function-bind.js                            # requires strict-mode
+skip script ecma_5/Function/function-call.js                            # requires strict-mode
+skip script ecma_5/Function/builtin-no-construct.js                     # requires Proxy
+skip script ecma_5/Global/adding-global-var-nonextensible-error.js      # Object.preventExtensions() bug!
+skip script ecma_5/Global/cross-global-implicit-this.js                 # requires strict-mode
+skip script ecma_5/Global/eval-01.js                                    # eval semantics bug!
+skip script ecma_5/Global/eval-02.js                                    # eval semantics bug!
+skip script ecma_5/Global/parenthesized-eval-is-direct.js               # eval semantics bug!
+skip script ecma_5/Global/eval-in-strict-eval-in-normal-function.js     # requires strict-mode
+skip script ecma_5/Global/decodeURI-decodes-FFFE-FFFF.js                # decodeURI bug!
+skip script ecma_5/JSON/parse-number-syntax.js                          # JSON parser bug!
+skip script ecma_5/JSON/parse-reviver.js                                # JSON impl bug!
+skip script ecma_5/JSON/parse-reviver-array-delete.js                   # JSON impl bug!
+skip script ecma_5/JSON/parse-syntax-errors-02.js                       # JSON parser bug!
+skip script ecma_5/JSON/parse-syntax-errors-03.js                       # JSON parser bug!
+skip script ecma_5/JSON/stringify-missing-arguments.js                  # JSON impl bug!
+skip script ecma_5/JSON/stringify-nonarray-noncallable-replacer.js      # JSON impl bug!
+skip script ecma_5/JSON/stringify-replacer-array-boxed-elements.js      # JSON impl bug!
+skip script ecma_5/JSON/stringify-replacer-array-duplicated-element.js  # JSON impl bug!
+skip script ecma_5/JSON/stringify-replacer-array-edgecase-jsid-elements.js  # JSON impl bug!
+skip script ecma_5/JSON/stringify-replacer-array-hijinks.js             # JSON impl bug!
+skip script ecma_5/JSON/stringify-replacer-array-skipped-element.js     # JSON impl bug!
+skip script ecma_5/JSON/stringify-replacer-with-array-indexes.js        # JSON impl bug!
+skip script ecma_5/JSON/trailing-comma.js                               # JSON parser bug!
+skip script ecma_5/Number/toString-radix-handling.js                    # Number.prototype.toString bug!
+skip script ecma_5/Object/15.2.3.3-01.js                                # Object descriptors impl bug!
+slow skip script ecma_5/Object/15.2.3.6-new-definition.js               # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-redefinition-1-of-4.js          # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-redefinition-2-of-4.js          # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-redefinition-3-of-4.js          # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-redefinition-4-of-4.js          # fails / times out
+skip script ecma_5/Object/15.2.3.7-01.js                                # Object descriptors impl bug!
+skip script ecma_5/Object/15.2.3.9.js                                   # Object descriptors impl bug!
+skip script ecma_5/Object/extensibility-01.js                           # requires strict-mode
+slow skip script ecma_5/Object/15.2.3.6-middle-redefinition-1-of-8.js   # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-middle-redefinition-2-of-8.js   # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-middle-redefinition-3-of-8.js   # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-middle-redefinition-7-of-8.js   # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-middle-redefinition-4-of-8.js   # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-middle-redefinition-5-of-8.js   # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-middle-redefinition-6-of-8.js   # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-middle-redefinition-8-of-8.js   # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-dictionary-redefinition-1-of-8.js    # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-dictionary-redefinition-2-of-8.js    # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-dictionary-redefinition-3-of-8.js    # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-dictionary-redefinition-4-of-8.js    # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-dictionary-redefinition-5-of-8.js    # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-dictionary-redefinition-6-of-8.js    # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-dictionary-redefinition-7-of-8.js    # fails / times out
+slow skip script ecma_5/Object/15.2.3.6-dictionary-redefinition-8-of-8.js    # fails / times out
+skip script ecma_5/Object/object-toString-01.js                         # Object.prototype.toString coerce global bug!
+skip script ecma_5/Object/proto-property-change-writability-set.js      # Object descriptors impl bug!
+skip script ecma_5/Object/freeze-global-eval-const.js                   # requires evalcx shell-function
+skip script ecma_5/Object/isPrototypeOf.js                              # Object.prototype.isPrototypeOf bug!
+skip script ecma_5/Object/propertyIsEnumerable.js                       # Object.prototype.propertyIsEnumerable bug!
+skip script ecma_5/Object/toLocaleString.js                             # Object.prototype.toLocaleString bug!
+skip script ecma_5/RegExp/7.8.5-01.js                                   # RegExp parser bug!
+skip script ecma_5/RegExp/15.10.5-01.js                                 # RegExp.length bug!
+skip script ecma_5/RegExp/15.10.7.5-01.js                               # RegExp.lastIndex coerce bug!
+skip script ecma_5/RegExp/empty-lookahead.js                            # RegExp lookahead bug!
+skip script ecma_5/RegExp/exec.js                                       # RegExp.prototype.exec bug!
+skip script ecma_5/RegExp/regress-613820-1.js                           # RegExp back reference bug!
+skip script ecma_5/RegExp/regress-613820-3.js                           # RegExp back reference bug!
+skip script ecma_5/RegExp/regress-429241.js                             # RegExp parser bug!
+skip script ecma_5/RegExp/instance-property-storage-introspection.js    # RegExp properties bug!
+skip script ecma_5/RegExp/regexp-space-character-class.js               # RegExp space character class bug!
+skip script ecma_5/String/15.5.4.7.js                                   # String.prototype.indexOf bug!
+skip script ecma_5/String/15.5.4.11-01.js                               # String.prototype.replace bug!
+skip script ecma_5/String/split-01.js                                   # String.prototype.split bug!
+skip script ecma_5/String/split-undefined-separator.js                  # String.prototype.split bug!
+skip script ecma_5/String/split-xregexp.js                              # String.prototype.split bug!
+skip script ecma_5/String/string-upper-lower-mapping.js                 # unknown String bug
+skip script ecma_5/Types/8.12.5-01.js                                   # ecma5 compliance bug!
+skip script ecma_5/extensions/15.4.4.11.js                              # ecma5 compliance bug!
+skip script ecma_5/extensions/15.9.4.2.js                               # Date parse ISO bug!
+skip script ecma_5/extensions/Object-keys-and-object-ids.js             # ecma5 compliance bug!
+skip script ecma_5/extensions/bug352085.js                              # strange SM function decompilation thingy
+skip script ecma_5/extensions/arguments-property-access-in-function.js  # requires strict-mode
+skip script ecma_5/extensions/array-toString-recursion.js               # recursion not detected
+skip script ecma_5/extensions/cross-global-eval-is-indirect.js          # requires 'newGlobal()' support
+skip script ecma_5/extensions/es5ish-defineGetter-defineSetter.js       # ecma5 compliance bug!
+skip script ecma_5/extensions/extension-methods-reject-null-undefined-this.js   # different error object bug?
+skip script ecma_5/extensions/function-caller-skips-eval-frames.js      # eval semantics bug!
+skip script ecma_5/extensions/function-definition-with.js               # requires 'evaluate()' support
+skip script ecma_5/extensions/function-properties.js                    # requires Function.prototype.caller support
+skip script ecma_5/extensions/legacy-JSON.js                            # requires 'parseLegacyJSON()' support
+skip script ecma_5/extensions/proxy-strict.js                           # requires Proxy support
+skip script ecma_5/extensions/strict-e4x-ban.js                         # strict-mode Parser bug
+skip script ecma_5/extensions/strict-function-statements.js             # requires strict-mode
+skip script ecma_5/extensions/string-literal-getter-setter-decompilation.js # Parser bug!
+skip script ecma_5/extensions/toLocaleString-infinite-recursion.js      # recursion not detected
+skip script ecma_5/extensions/uneval-strict-functions.js                # requires strict-mode, Parser bug!
+skip script ecma_5/extensions/watch-array-length.js                     # requires Object.watch support
+skip script ecma_5/extensions/watch-inherited-property.js               # requires Object.watch support
+skip script ecma_5/extensions/watch-replaced-setter.js                  # requires Object.watch support
+skip script ecma_5/extensions/watch-setter-become-setter.js             # requires Object.watch support
+skip script ecma_5/extensions/watch-value-prop-becoming-setter.js       # requires Object.watch support
+skip script ecma_5/extensions/watchpoint-deletes-JSPropertyOp-setter.js # requires Object.watch support
+skip script ecma_5/misc/line-paragraph-separator-parse-as-lineterminator.js # Parser bug!
+skip script ecma_5/misc/redeclare-var-non-writable-property.js          # ecma5 compliance bug!
+skip script ecma_5/misc/explicit-undefined-optional-argument.js         # bad undefined handling bug!
+skip script ecma_5/misc/function-definition-eval.js                     # eval semantics, ecma5 compliance bug!
+skip script ecma_5/misc/function-definition-evaluate.js                 # requires 'evaluate()' support
+skip script ecma_5/misc/future-reserved-words.js                        # Parser bug!
+skip script ecma_5/misc/builtin-methods-reject-null-undefined-this.js   # ecma5 compliance bug!
+skip script ecma_5/misc/regress-bug632003.js                            # ecma5 compliance bug!
+skip script ecma_5/misc/new-with-non-constructor.js                     # RegExp callable bug!
+skip script ecma_5/misc/error-undefined-message.js                      # Error properties bug!
+skip script ecma_5/misc/regexp-functions-with-undefined.js              # RegExp bug!
+skip script ecma_5/misc/unnamed-function.js                             # Parser bug!
+skip script ecma_5/misc/unicode-escaped-keyword.js                      # Parser bug!
+skip script ecma_5/strict/8.7.2.js                                      # requires strict-mode
+skip script ecma_5/strict/8.12.5.js                                     # requires strict-mode
+skip script ecma_5/strict/8.12.7.js                                     # requires strict-mode
+skip script ecma_5/strict/10.4.2.js                                     # requires strict-mode
+skip script ecma_5/strict/10.4.3.js                                     # requires strict-mode
+skip script ecma_5/strict/10.6.js                                       # requires strict-mode
+skip script ecma_5/strict/11.1.5.js                                     # requires strict-mode
+skip script ecma_5/strict/11.3.1.js                                     # requires strict-mode
+skip script ecma_5/strict/11.3.2.js                                     # requires strict-mode
+skip script ecma_5/strict/11.4.1.js                                     # requires strict-mode
+skip script ecma_5/strict/11.4.4.js                                     # requires strict-mode
+skip script ecma_5/strict/11.4.5.js                                     # requires strict-mode
+skip script ecma_5/strict/11.13.1.js                                    # requires strict-mode
+skip script ecma_5/strict/11.13.2.js                                    # requires strict-mode
+skip script ecma_5/strict/12.14.1.js                                    # requires strict-mode
+skip script ecma_5/strict/13.1.js                                       # requires strict-mode
+skip script ecma_5/strict/15.3.4.5.js                                   # requires strict-mode
+skip script ecma_5/strict/15.3.5.1.js                                   # requires strict-mode
+skip script ecma_5/strict/15.3.5.2.js                                   # requires strict-mode
+skip script ecma_5/strict/15.4.4.6.js                                   # requires strict-mode
+skip script ecma_5/strict/15.4.4.8.js                                   # requires strict-mode
+skip script ecma_5/strict/15.4.4.9.js                                   # requires strict-mode
+skip script ecma_5/strict/15.4.4.12.js                                  # requires strict-mode
+skip script ecma_5/strict/15.4.4.13.js                                  # requires strict-mode
+skip script ecma_5/strict/15.4.5.1.js                                   # requires strict-mode
+skip script ecma_5/strict/15.5.5.1.js                                   # requires strict-mode
+skip script ecma_5/strict/15.5.5.2.js                                   # requires strict-mode
+skip script ecma_5/strict/15.10.7.js                                    # requires strict-mode
+skip script ecma_5/strict/B.1.2.js                                      # requires strict-mode
+skip script ecma_5/strict/function-name.js                              # requires strict-mode
+skip script ecma_5/strict/primitive-this-no-writeback.js                # requires strict-mode
+skip script ecma_5/strict/unbrand-this.js                               # requires strict-mode
+skip script ecma_5/strict/this-for-function-expression-recursion.js     # requires strict-mode
+skip script ecma_5/strict/assign-to-callee-name.js                      # requires strict-mode
+skip script ecma_5/strict/directive-prologue-01.js                      # requires strict-mode
+skip script ecma_5/strict/eval-variable-environment.js                  # requires strict-mode
+skip script ecma_5/strict/strict-this-is-not-truthy.js                  # requires strict-mode
+
+
+# ecma_6
+skip script ecma_6/Map/NaN-as-key.js                        # Map not supported
+skip script ecma_6/Set/NaN-as-key.js                        # Set not supported
+
+
+# js1_5
+skip script js1_5/Array/regress-157652.js                   # different error message
+skip script js1_5/Date/regress-301738-02.js                 # Date parse bug!
+skip script js1_5/Date/regress-309925-02.js                 # Date parse bug!
+skip script js1_5/Date/regress-346363.js                    # Date.prototype.setFullYear
+skip script js1_5/decompilation/regress-346892.js           # decompilation difference
+skip script js1_5/decompilation/regress-346902.js           # decompilation difference
+skip script js1_5/decompilation/regress-346904.js           # decompilation difference
+skip script js1_5/decompilation/regress-346915.js           # decompilation difference
+skip script js1_5/decompilation/regress-349491.js           # decompilation difference
+skip script js1_5/decompilation/regress-349596.js           # decompilation difference
+skip script js1_5/decompilation/regress-349650.js           # decompilation difference
+skip script js1_5/decompilation/regress-350242.js           # decompilation difference
+skip script js1_5/decompilation/regress-350263.js           # decompilation difference
+skip script js1_5/decompilation/regress-350271.js           # decompilation difference
+skip script js1_5/decompilation/regress-350666.js           # decompilation difference
+skip script js1_5/decompilation/regress-351104.js           # decompilation difference
+skip script js1_5/decompilation/regress-351219.js           # decompilation difference
+skip script js1_5/decompilation/regress-351597.js           # decompilation difference
+skip script js1_5/decompilation/regress-351693.js           # decompilation difference
+skip script js1_5/decompilation/regress-351705.js           # decompilation difference
+skip script js1_5/decompilation/regress-351793.js           # decompilation difference
+skip script js1_5/decompilation/regress-352013.js           # decompilation difference
+skip script js1_5/decompilation/regress-352073.js           # decompilation difference
+skip script js1_5/decompilation/regress-352202.js           # decompilation difference
+skip script js1_5/decompilation/regress-352312.js           # decompilation difference
+skip script js1_5/decompilation/regress-352375.js           # decompilation difference
+skip script js1_5/decompilation/regress-352453.js           # decompilation difference
+skip script js1_5/decompilation/regress-352649.js           # decompilation difference
+skip script js1_5/decompilation/regress-353000.js           # decompilation difference
+skip script js1_5/decompilation/regress-353146.js           # decompilation difference
+skip script js1_5/decompilation/regress-354910.js           # decompilation difference
+skip script js1_5/decompilation/regress-356083.js           # Parser bug!
+skip script js1_5/decompilation/regress-375882.js           # decompilation difference
+skip script js1_5/decompilation/regress-376564.js           # decompilation difference
+skip script js1_5/decompilation/regress-457824.js           # decompilation difference
+skip script js1_5/decompilation/regress-460501.js           # decompilation difference
+skip script js1_5/decompilation/regress-460870.js           # decompilation difference
+skip script js1_5/Exceptions/errstack-001.js                # Error.prototype.message bug!
+skip script js1_5/Exceptions/regress-315147.js              # options('strict') warning bug!
+skip script js1_5/Exceptions/regress-332472.js              # different error message
+skip script js1_5/Exceptions/regress-333728.js              # typeof bug!
+skip script js1_5/Exceptions/regress-342359.js              # error object resolution bug!
+skip script js1_5/Expressions/regress-394673.js             # fails due to deep recursion prevention
+skip script js1_5/Expressions/regress-96526-delelem.js      # decompilation difference
+skip script js1_5/extensions/regress-245148.js              # Array.prototype.toSource bug!
+skip script js1_5/extensions/regress-254375.js              # Object.prototype.toSource bug!
+skip script js1_5/extensions/regress-291213.js              # Script object difference, bug?
+skip script js1_5/extensions/regress-303277.js              # requires Object.watch
+skip script js1_5/extensions/regress-306738.js              # getter/setter decompilation bug!
+skip script js1_5/extensions/regress-333541.js              # number literal property access decompilation bug!
+skip script js1_5/extensions/regress-346494.js              # decompilation difference
+skip script js1_5/extensions/regress-351463-01.js           # RegExp character class bug!
+skip script js1_5/extensions/regress-352372.js              # different error message
+skip script js1_5/extensions/regress-353214.js              # decompilation difference
+skip script js1_5/extensions/regress-354541-02.js           # Script object difference, bug?
+skip script js1_5/extensions/regress-354541-04.js           # Script object difference, bug?
+skip script js1_5/extensions/regress-355339.js              # requires Object.watch
+skip script js1_5/extensions/regress-355655.js              # Script object difference, bug?
+skip script js1_5/extensions/regress-355820.js              # Script object difference, bug?
+skip script js1_5/extensions/regress-359024.js              # Script object difference, bug?
+skip script js1_5/extensions/regress-361346.js              # requires Object.watch
+skip script js1_5/extensions/regress-361360.js              # requires Object.watch
+skip script js1_5/extensions/regress-361552.js              # requires Object.watch
+skip script js1_5/extensions/regress-361558.js              # requires Object.watch
+skip script js1_5/extensions/regress-361571.js              # requires Object.watch
+skip script js1_5/extensions/regress-361856.js              # requires Object.watch
+skip script js1_5/extensions/regress-365869.js              # options('strict') warning bug!
+skip script js1_5/extensions/regress-367119-01.js           # Script object difference, bug?
+skip script js1_5/extensions/regress-367119-02.js           # Script object difference, bug?
+skip script js1_5/extensions/regress-367923.js              # different error message
+skip script js1_5/extensions/regress-369696-01.js           # fails due to deep recursion prevention
+skip script js1_5/extensions/regress-375801.js              # decompilation difference
+skip script js1_5/extensions/regress-381211.js              # getter/setter decompilation difference
+skip script js1_5/extensions/regress-381304.js              # getter/setter decompilation difference
+skip script js1_5/extensions/regress-384680.js              # decompilation difference
+skip script js1_5/extensions/regress-385393-09.js           # requires Object.watch
+skip script js1_5/extensions/regress-420612.js              # requires Object.watch
+skip script js1_5/extensions/regress-429739.js              # different error message
+skip script js1_5/extensions/regress-454142.js              # requires Object.watch
+skip script js1_5/extensions/regress-455413.js              # requires Object.watch
+skip script js1_5/extensions/regress-462734-02.js           # global __proto__ ?
+skip script js1_5/extensions/regress-462734-03.js           # global __proto__ ?
+skip script js1_5/extensions/regress-462734-04.js           # global __proto__ ?
+skip script js1_5/extensions/regress-465145.js              # requires Object.watch
+skip script js1_5/extensions/regress-472787.js              # requires Object.watch
+skip script js1_5/extensions/regress-50447-1.js             # different error message
+skip script js1_5/extensions/toLocaleFormat-01.js           # requires Date.prototype.toLocaleFormat
+skip script js1_5/extensions/toLocaleFormat-02.js           # requires Date.prototype.toLocaleFormat
+skip script js1_5/extensions/regress-564577.js              # __noSuchMethod__ bug!
+skip script js1_5/Function/regress-222029-001.js            # requires Function.prototype.caller support
+skip script js1_5/Function/regress-222029-002.js            # requires Function.prototype.caller support
+skip script js1_5/LexicalConventions/regress-343675.js      # Parser bug!
+skip script js1_5/Object/regress-308806-01.js               # Object.prototype.toLocaleString bug!
+skip script js1_5/Object/regress-362872-01.js               # requires Object.watch
+skip script js1_5/Object/regress-362872-02.js               # requires Object.watch
+skip script js1_5/Regress/regress-103602.js                 # const declaration in eval bug!
+skip script js1_5/Regress/regress-152646.js                 # fails due to deep recursion prevention
+skip script js1_5/Regress/regress-192414.js                 # fails due to deep recursion prevention
+skip script js1_5/Regress/regress-213482.js                 # requires Object.watch
+skip script js1_5/Regress/regress-224956.js                 # RegExp callable bug!
+skip script js1_5/Regress/regress-240577.js                 # requires Object.watch
+skip script js1_5/Regress/regress-248444.js                 # RegExp.prototype.toSource bug!
+skip script js1_5/Regress/regress-252892.js                 # decompilation difference
+skip script js1_5/Regress/regress-253150.js                 # options('strict') warning bug!
+skip script js1_5/Regress/regress-256501.js                 # fails due to deep recursion prevention
+skip script js1_5/Regress/regress-259935.js                 # browser-only test
+skip script js1_5/Regress/regress-280769-1.js               # RegExp too complex
+skip script js1_5/Regress/regress-280769-2.js               # RegExp too complex
+skip script js1_5/Regress/regress-280769-3.js               # RegExp too complex
+skip script js1_5/Regress/regress-280769-5.js               # RegExp too complex
+skip script js1_5/Regress/regress-280769.js                 # RegExp too complex
+skip script js1_5/Regress/regress-281606.js                 # [[HasInstance]] bug!
+skip script js1_5/Regress/regress-290575.js                 # SM limits function arguments to 65536
+skip script js1_5/Regress/regress-294302.js                 # disable test for load() function
+skip script js1_5/Regress/regress-295052.js                 # String.prototype.match bug!
+skip script js1_5/Regress/regress-308566.js                 # options('strict') regexp back reference bug!
+skip script js1_5/Regress/regress-311629.js                 # fails due to deep recursion prevention
+skip script js1_5/Regress/regress-312260.js                 # options('strict') warning bug!
+skip script js1_5/Regress/regress-315974.js                 # requires String.prototype.quote support
+skip script js1_5/Regress/regress-317533.js                 # options('strict') warning bug!
+skip script js1_5/Regress/regress-328664.js                 # different error message
+skip script js1_5/Regress/regress-349648.js                 # decompilation difference
+skip script js1_5/Regress/regress-350268.js                 # Function bug!
+skip script js1_5/Regress/regress-352197.js                 # options('strict') warning bug!
+skip script js1_5/Regress/regress-355341.js                 # requires Object.watch
+skip script js1_5/Regress/regress-355344.js                 # requires Object.watch
+skip script js1_5/Regress/regress-355556.js                 # different error message
+skip script js1_5/Regress/regress-356693.js                 # different error message
+skip script js1_5/Regress/regress-361467.js                 # requires Object.watch
+skip script js1_5/Regress/regress-361617.js                 # requires Object.watch
+skip script js1_5/Regress/regress-367561-03.js              # const redeclaration bug!
+skip script js1_5/Regress/regress-372364.js                 # different error message
+skip script js1_5/Regress/regress-383682.js                 # eval semantics bug
+skip script js1_5/Regress/regress-385393-06.js              # requires Object.watch
+skip script js1_5/Regress/regress-420919.js                 # different error-message
+skip script js1_5/Regress/regress-506567.js                 # requires Object.watch
+skip script js1_5/Regress/regress-68498-003.js              # eval semantics bug
+skip script js1_5/Scope/regress-181834.js                   # no longer valid rhino specific bug
+skip script js1_5/Scope/regress-446026-01.js                # different error message
+
+
+# js1_6
+skip script js1_6/Array/regress-304828.js                   # Array.prototype.reverse bug!
+skip script js1_6/decompilation/regress-352613-01.js        # decompilation difference
+skip script js1_6/decompilation/regress-352613-02.js        # decompilation difference
+skip script js1_6/extensions/regress-312385-01.js           # some generic method bug!
+skip script js1_6/extensions/regress-352392.js              # different error-type/message
+skip script js1_6/extensions/regress-465443.js              # Parser bug!
+skip script js1_6/extensions/regress-470310.js              # different error message
+skip script js1_6/extensions/regress-565521.js              # some for-each bug!
+skip script js1_6/Regress/regress-350417.js                 # different error message
+skip script js1_6/Regress/regress-355002.js                 # different error message
+skip script js1_6/String/regress-306591.js                  # String.indexOf bug!
+
+
+# js1_7
+skip script js1_7/block/regress-344601.js                   # decompilation difference
+skip script js1_7/block/regress-347559.js                   # options('strict') warning bug!
+skip script js1_7/block/regress-351794.js                   # decompilation difference
+skip script js1_7/block/regress-352422.js                   # let not in block bug!
+skip script js1_7/block/regress-352786.js                   # let not in block bug!
+skip script js1_7/decompilation/regress-349493.js           # decompilation difference
+skip script js1_7/decompilation/regress-349499.js           # decompilation difference
+skip script js1_7/decompilation/regress-350704.js           # decompilation difference
+skip script js1_7/decompilation/regress-350793-02.js        # decompilation difference
+skip script js1_7/decompilation/regress-351070-03.js        # decompilation difference
+skip script js1_7/decompilation/regress-351496.js           # decompilation difference
+skip script js1_7/decompilation/regress-352008.js           # decompilation difference
+skip script js1_7/decompilation/regress-352068.js           # decompilation difference
+skip script js1_7/decompilation/regress-352079.js           # decompilation difference
+skip script js1_7/decompilation/regress-352217.js           # decompilation difference
+skip script js1_7/decompilation/regress-352266.js           # decompilation difference
+skip script js1_7/decompilation/regress-352268.js           # decompilation difference
+skip script js1_7/decompilation/regress-352402.js           # decompilation difference
+skip script js1_7/decompilation/regress-352415.js           # decompilation difference
+skip script js1_7/decompilation/regress-352441.js           # decompilation difference
+skip script js1_7/decompilation/regress-355004.js           # decompilation difference
+skip script js1_7/decompilation/regress-355049-01.js        # decompilation difference
+skip script js1_7/decompilation/regress-355049-02.js        # decompilation difference
+skip script js1_7/decompilation/regress-355105.js           # Parser bug!
+skip script js1_7/decompilation/regress-356247.js           # decompilation difference
+skip script js1_7/decompilation/regress-374713.js           # Parser bug!
+skip script js1_7/decompilation/regress-379925.js           # Parser bug!
+skip script js1_7/decompilation/regress-429252.js           # decompilation difference
+skip script js1_7/extensions/iterator-ctor.js               # __iterator__ not hidden
+skip script js1_7/extensions/regress-346642-06.js           # Parser bug!
+skip script js1_7/extensions/regress-351102-03.js           # Parser bug!
+skip script js1_7/extensions/regress-351102-04.js           # Parser bug!
+skip script js1_7/extensions/regress-351102-05.js           # Parser bug!
+skip script js1_7/extensions/regress-351102-07.js           # Parser bug!
+skip script js1_7/extensions/regress-353214-02.js           # SM changes 'let' to 'var' in decompilation?
+skip script js1_7/extensions/regress-354945-01.js           # does not throw TypeError for Iterator with primitive value  bug!
+skip script js1_7/extensions/regress-354945-02.js           # different error message
+skip script js1_7/extensions/regress-355145.js              # ::function syntax not supported
+skip script js1_7/extensions/regress-367629.js              # decompilation difference
+skip script js1_7/extensions/regress-379566.js              # decompilation difference
+skip script js1_7/extensions/regress-380933.js              # does not throw TypeError in Array.prototype.toSource bug!
+skip script js1_7/extensions/regress-381301.js              # decompilation difference
+skip script js1_7/extensions/regress-381303.js              # decompilation difference
+skip script js1_7/extensions/regress-453955.js              # requires Object.watch
+skip script js1_7/extensions/regress-473282.js              # requires Object.watch
+skip script js1_7/GC/regress-381374.js                      # requires Object.watch
+skip script js1_7/iterable/regress-568056.js                # Iterator follows proto-chain bug!
+skip script js1_7/lexical/regress-336376-01.js              # Parser bug!
+skip script js1_7/lexical/regress-351515.js                 # Parser bug!
+skip script js1_7/regexp/yflag.js                           # RegExp sticky y-flag not supported
+skip script js1_7/regress/regress-351503-01.js              # different error message
+skip script js1_7/regress/regress-351503-02.js              # different error message
+skip script js1_7/regress/regress-363040-01.js              # different error message
+skip script js1_7/regress/regress-375695.js                 # Parser bug!
+skip script js1_7/regress/regress-379483.js                 # Parser bug!
+skip script js1_7/regress/regress-406477.js                 # eval semantics bug!
+skip script js1_7/regress/regress-410649.js                 # Parser bug!
+skip script js1_7/regress/regress-352870-01.js              # different error message
+skip script js1_7/regress/regress-352870-02.js              # different error message
+
+
+# js1_8
+skip script js1_8/decompilation/regress-346749.js           # decompilation difference
+skip script js1_8/decompilation/regress-381372.js           # decompilation difference
+skip script js1_8/decompilation/regress-381963-01.js        # decompilation difference
+skip script js1_8/decompilation/regress-381963-02.js        # decompilation difference
+skip script js1_8/decompilation/regress-382981.js           # Parser bug!
+skip script js1_8/decompilation/regress-460504.js           # Parser bug!
+skip script js1_8/extensions/regress-353116.js              # different error message
+skip script js1_8/extensions/regress-385729.js              # decompilation difference
+skip script js1_8/extensions/regress-394709.js              # requires Object.watch
+skip script js1_8/extensions/regress-465453.js              # decompilation difference
+skip script js1_8/extensions/regress-469625.js              # different error message
+skip script js1_8/extensions/regress-473040.js              # global __proto__ property
+skip script js1_8/extensions/regress-476869.js              # global __proto__ property
+skip script js1_8/extensions/regress-481989.js              # requires Object.watch
+skip script js1_8/extensions/regress-482263.js              # global __proto__ property
+skip script js1_8/genexps/regress-349012-01.js              # generator bug!
+skip script js1_8/genexps/regress-349326.js                 # generator bug!
+skip script js1_8/genexps/regress-349331.js                 # generator bug!
+skip script js1_8/genexps/regress-380237-02.js              # decompilation difference
+skip script js1_8/genexps/regress-380237-03.js              # Parser bug!
+skip script js1_8/genexps/regress-384991.js                 # Parser bug!
+skip script js1_8/genexps/regress-634472.js                 # Parser bug!
+skip script js1_8/genexps/regress-665286.js                 # Parser bug!
+skip script js1_8/genexps/regress-666852.js                 # isGenerator() not supported
+skip script js1_8/genexps/regress-667131.js                 # Parser bug!
+skip script js1_8/regress/regress-366941.js                 # Parser bug!
+skip script js1_8/regress/regress-384412.js                 # different error message
+skip script js1_8/regress/regress-384758.js                 # Parser bug!
+skip script js1_8/regress/regress-453492.js                 # Parser bug!
+skip script js1_8/regress/regress-455981-01.js              # Parser bug!
+skip script js1_8/regress/regress-455981-02.js              # Parser bug!
+skip script js1_8/regress/regress-459185.js                 # Parser bug!
+skip script js1_8/regress/regress-459186.js                 # Parser bug!
+skip script js1_8/regress/regress-467495-03.js              # decompilation difference
+skip script js1_8/regress/regress-467495-05.js              # decompilation difference
+skip script js1_8/regress/regress-469625-03.js              # different error message
+skip script js1_8/regress/regress-477234.js                 # global __proto__ property
+skip script js1_8/regress/regress-499524.js                 # Parser bug!
+
+
+# js1_8_1
+skip script js1_8_1/decompilation/regress-346642-01.js      # Parser bug!
+skip script js1_8_1/decompilation/regress-349605.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-349634.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-350991.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-351070-01.js      # decompilation difference
+skip script js1_8_1/decompilation/regress-351336.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-351626.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-352011.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-352022.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-352026.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-352609.js         # different error message
+skip script js1_8_1/decompilation/regress-353249.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-354878.js         # decompilation difference
+skip script js1_8_1/decompilation/regress-373678-01.js      # decompilation difference
+skip script js1_8_1/decompilation/regress-380237-03.js      # Parser bug!
+skip script js1_8_1/decompilation/regress-380237-04.js      # bug 547884
+skip script js1_8_1/decompilation/regress-443074.js         # Parser bug!
+skip script js1_8_1/decompilation/regress-466905-03.js      # decompilation difference
+skip script js1_8_1/extensions/regress-352281.js            # decompilation difference
+skip script js1_8_1/extensions/regress-353214-02.js         # decompilation difference
+skip script js1_8_1/extensions/regress-437288-01.js         # for-in with null bug!
+skip script js1_8_1/extensions/regress-452498-193.js        # requires Object.watch
+skip script js1_8_1/extensions/regress-452498-196.js        # requires Object.watch
+skip script js1_8_1/extensions/regress-520572.js            # requires Object.watch
+skip script js1_8_1/extensions/strict-warning.js            # options('strict') warning bug!
+skip script js1_8_1/regress/regress-420399.js               # different error message
+skip script js1_8_1/regress/regress-452498-039.js           # const bug!
+skip script js1_8_1/regress/regress-452498-052.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-053.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-054.js           # let redeclaration bug!
+skip script js1_8_1/regress/regress-452498-068.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-082.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-091.js           # decompilation difference
+skip script js1_8_1/regress/regress-452498-092.js           # different error message
+skip script js1_8_1/regress/regress-452498-098.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-099-a.js         # Parser bug!
+skip script js1_8_1/regress/regress-452498-099.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-102.js           # const redeclaration bug!
+skip script js1_8_1/regress/regress-452498-107.js           # decompilation difference
+skip script js1_8_1/regress/regress-452498-110.js           # decompilation difference
+skip script js1_8_1/regress/regress-452498-112.js           # different error message
+skip script js1_8_1/regress/regress-452498-117.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-135.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-138.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-139.js           # Parser bug!
+skip script js1_8_1/regress/regress-452498-160.js           # requires Object.watch
+skip script js1_8_1/regress/regress-452498-185.js           # let redeclaration bug!
+skip script js1_8_1/regress/regress-452498-187.js           # for-in bug!
+skip script js1_8_1/regress/regress-452498-191.js           # let redeclaration bug!
+skip script js1_8_1/regress/regress-507424.js               # Parser bug!
+skip script js1_8_1/regress/regress-509354.js               # Parser bug!
+skip script js1_8_1/strict/12.2.1.js                        # requires strict-mode
+skip script js1_8_1/strict/generator-eval-arguments.js      # requires strict-mode
+skip script js1_8_1/strict/let-block-eval-arguments.js      # requires strict-mode
+
+
+# js1_8_5
+skip script js1_8_5/regress/regress-383902.js               # requires strict-mode
+skip script js1_8_5/regress/regress-469758.js               # different error message
+skip script js1_8_5/regress/regress-476088.js               # requires trap() shell function
+skip script js1_8_5/regress/regress-533876.js               # requires Object.watch
+skip script js1_8_5/regress/regress-552432.js               # Object.create() with Arguments object bug!
+skip script js1_8_5/regress/regress-559402-1.js             # 'use strict' directive should not warn in options('strict')
+skip script js1_8_5/regress/regress-566914.js               # Proxy not supported
+skip script js1_8_5/regress/regress-569464.js               # requires strict-mode
+skip script js1_8_5/regress/regress-571014.js               # ArrayBuffer not supported
+skip script js1_8_5/regress/regress-573875.js               # different error message
+skip script js1_8_5/regress/regress-577648-1.js             # requires Function.prototype.caller support
+skip script js1_8_5/regress/regress-577648-2.js             # requires Function.prototype.caller support
+skip script js1_8_5/regress/regress-584355.js               # requires Function.prototype.caller support
+skip script js1_8_5/regress/regress-586482-1.js             # requires Function.prototype.caller support
+skip script js1_8_5/regress/regress-586482-2.js             # requires Function.prototype.caller support
+skip script js1_8_5/regress/regress-586482-3.js             # requires Function.prototype.caller support
+skip script js1_8_5/regress/regress-586482-4.js             # requires Function.prototype.caller support
+skip script js1_8_5/regress/regress-591846.js               # requires Function.prototype.caller support
+skip script js1_8_5/regress/regress-595230-1.js             # requires evalcx shell-function
+skip script js1_8_5/regress/regress-595230-2.js             # requires evalcx shell-function
+skip script js1_8_5/regress/regress-595365-2.js             # requires shapeOf shell-function
+skip script js1_8_5/regress/regress-597870.js               # ::function syntax not supported
+skip script js1_8_5/regress/regress-607799.js               # requires evalcx shell-function
+skip script js1_8_5/regress/regress-607863.js               # requires evalcx shell-function
+skip script js1_8_5/regress/regress-609617.js               # eval semantics bug!
+skip script js1_8_5/regress/regress-610026.js               # tests SM internal program limits
+skip script js1_8_5/regress/regress-617405-2.js             # invalid getter as prototype bug!
+skip script js1_8_5/regress/regress-618576.js               # ::function syntax not supported
+skip script js1_8_5/regress/regress-618652.js               # requires @line notation support
+skip script js1_8_5/regress/regress-619003-1.js             # Parser bug!
+skip script js1_8_5/regress/regress-620376-2.js             # Proxy not supported
+skip script js1_8_5/regress/regress-620750.js               # Parser bug! strict-mode
+skip script js1_8_5/regress/regress-635195.js               # requires Object.watch
+skip script js1_8_5/regress/regress-636394.js               # requires Object.watch
+skip script js1_8_5/regress/regress-640075.js               # requires strict-mode
+skip script js1_8_5/regress/regress-665355.js               # ArrayBuffer not supported
+skip script js1_8_5/regress/regress-667047.js               # ArrayBuffer not supported
+skip script js1_8_5/extensions/typedarray.js                # ArrayBuffer not supported
+skip script js1_8_5/extensions/typedarray-prototype.js              # Uint8Array not supported
+skip script js1_8_5/extensions/arraybuffer-prototype.js             # ArrayBuffer not supported
+skip script js1_8_5/extensions/typedarray-subarray-of-subarray.js   # Int8Array not supported
+skip script js1_8_5/extensions/scripted-proxies.js                  # Proxy not supported
+skip script js1_8_5/extensions/watch-undefined-setter.js            # requires Object.watch
+skip script js1_8_5/extensions/parseInt-octal.js                    # parseInt bug!
+skip script js1_8_5/extensions/proxy-enumerateOwn-duplicates.js     # Proxy not supported
+skip script js1_8_5/extensions/proxy-proto-setter.js                # requires evalcx shell-function
+skip script js1_8_5/extensions/reflect-parse.js             # Reflect not supported
+skip script js1_8_5/extensions/destructure-accessor.js      # Parser bug!
+skip script js1_8_5/extensions/censor-strict-caller.js      # requires Function.prototype.caller support
+skip script js1_8_5/extensions/clone-simple.js              # requires serialize/deserialize shell-function
+skip script js1_8_5/extensions/clone-regexp.js              # requires serialize/deserialize shell-function
+skip script js1_8_5/extensions/clone-leaf-object.js         # requires serialize/deserialize shell-function
+skip script js1_8_5/extensions/clone-object.js              # requires serialize/deserialize shell-function
+skip script js1_8_5/extensions/clone-typed-array.js         # requires serialize/deserialize shell-function
+skip script js1_8_5/extensions/clone-errors.js              # requires serialize/deserialize shell-function
+skip script js1_8_5/extensions/clone-forge.js               # requires serialize/deserialize shell-function
+skip script js1_8_5/extensions/clone-complex-object.js      # requires serialize/deserialize shell-function
+skip script js1_8_5/extensions/dataview.js                  # DataView not supported
+skip script js1_8_5/extensions/regress-604781-1.js          # requires Object.watch
+skip script js1_8_5/extensions/regress-604781-2.js          # requires Object.watch
+skip script js1_8_5/extensions/regress-627984-1.js          # requires Object.watch
+skip script js1_8_5/extensions/regress-627984-2.js          # requires Object.watch
+skip script js1_8_5/extensions/regress-627984-3.js          # requires Object.watch
+skip script js1_8_5/extensions/regress-627984-4.js          # requires Object.watch
+skip script js1_8_5/extensions/regress-627984-5.js          # requires Object.watch
+skip script js1_8_5/extensions/regress-627984-6.js          # requires Object.watch
+skip script js1_8_5/extensions/regress-627984-7.js          # requires Object.watch
+skip script js1_8_5/extensions/regress-631723.js            # requires Object.watch
+skip script js1_8_5/extensions/regress-636818.js            # requires evalcx shell-function
+skip script js1_8_5/extensions/regress-636697.js            # requires Object.watch
+skip script js1_8_5/extensions/regress-637985.js            # requires Object.watch
+skip script js1_8_5/regress/regress-736792.js               # requires options("strict_mode")
+skip script js1_8_5/extensions/is-generator.js              # Function.prototype.isGenerator not supported
+skip script js1_8_5/extensions/weakmap.js                   # WeakMap not supported
+skip script js1_8_5/extensions/regress-645160.js            # eval semantics bug!
+skip script js1_8_5/extensions/regress-650753.js            # WeakMap not supported
+skip script js1_8_5/extensions/regress-672804-1.js          # requires trap() shell function
+skip script js1_8_5/extensions/regress-672804-2.js          # requires trap() shell function
+skip script js1_8_5/extensions/regress-672804-3.js          # requires trap() shell function
+skip script js1_8_5/extensions/regress-677589.js            # requires clone() shell function
+skip script js1_8_5/extensions/regress-696109.js            # Reflect not supported
+skip script js1_8_5/extensions/regress-697515.js            # WeakMap not supported
+skip script js1_8_5/extensions/correct-this-for-nonnatives-on-array-proto-chain.js  # Proxy not supported
+
+
+# tests marked as 'random' which currently fail in Rhino
+# skip script ecma_3/RegExp/regress-311414.js               # bad RegExp performance
+# skip script js1_5/Regress/regress-313967-01.js            # O(n) test fails
+# skip script js1_5/Regress/regress-313967-02.js            # O(n) test fails
+# skip-opt(0,9) script js1_5/Regress/regress-169559.js      # global var access slow
+
+
+# script to be skipped with certain optimization levels
+skip-opt(0,9) script ecma_3/Statements/regress-302439.js    # Program too complex: too big jump offset
+skip-opt(0,9) script ecma_3/Statements/regress-324650.js    # Program too complex: too big jump offset
+skip-opt(0,9) script ecma_3/Statements/regress-74474-002.js # Program too complex: too big jump offset
+skip-opt(0,9) script ecma_3/Statements/regress-74474-003.js # Program too complex: too big jump offset
+skip-opt(0,9) script ecma_5/String/defaultvalue.js          # [[DefaultValue]] bug!
+skip-opt(0,9) script js1_5/extensions/regress-226507.js     # Timeout
+skip-opt(0,9) script js1_5/Regress/regress-111557.js        # generated bytecode for method exceeds 64K limit
+skip-opt(0,9) script js1_5/Regress/regress-155081.js        # constant pool limit exceeded
+skip-opt(0,9) script js1_5/Regress/regress-155081-2.js      # constant pool limit exceeded
+skip-opt(0,9) script js1_5/Regress/regress-244470.js        # Program too complex: too big jump offset
+skip-opt(0,9) script js1_5/Regress/regress-308085.js        # Program too complex: too big jump offset
+skip-opt(0,9) script js1_5/Regress/regress-398085-01.js     # Program too complex: too big jump offset
+skip-opt(0,9) script js1_5/Regress/regress-398085-02.js     # Program too complex: too big jump offset
+skip-opt(0,9) script js1_5/Regress/regress-80981.js         # Program too complex: too big jump offset
+skip-opt(0,9) script js1_5/Regress/regress-89443.js         # Program too complex: too big jump offset
+skip-opt(0,9) script js1_5/Regress/regress-96526-003.js     # Program too complex: too big jump offset
+skip-opt(0,9) script js1_8/regress/regress-465460-01.js     # [[DefaultValue]] bug!
+skip-opt(0,9) script js1_8_5/extensions/dataview.js         # generated bytecode for method exceeds 64K limit
+
+
+# other scripts to be skipped due to StackOverflow, Heapspace or Timeout errors
+skip script e4x/Expressions/regress-366123.js                   # StackOverflow
+skip script e4x/Regress/regress-458679-01.js                    # Heapspace
+skip script e4x/Regress/regress-458679-02.js                    # Heapspace
+skip script e4x/Regress/regress-394941.js                       # Timeout
+skip script e4x/Regress/regress-347155.js                       # StackOverflow
+skip script e4x/Regress/regress-311580.js                       # Timeout
+skip script ecma/Date/15.9.5.8.js                               # Timeout
+skip script ecma/Date/15.9.5.10-2.js                            # Timeout
+skip script ecma/Date/15.9.5.11-2.js                            # Timeout
+skip script ecma/Date/15.9.5.12-2.js                            # Timeout
+skip script ecma_3/Array/regress-322135-02.js                   # Timeout
+skip script ecma_5/extensions/toSource-infinite-recursion.js    # StackOverflow
+skip script ecma_5/JSON/parse-mega-huge-array.js                # Timeout
+skip script ecma_5/RegExp/regress-617935.js                     # Heapspace
+skip script ecma_5/String/string-object-length.js               # Heapspace
+skip script ecma_5/extensions/String-methods-infinite-recursion.js # StackOverflow
+skip script js1_5/Array/regress-330812.js                       # Heapspace
+skip script js1_5/Exceptions/regress-121658.js                  # Timeout
+skip script js1_5/extensions/regress-192465.js                  # StackOverflow
+skip script js1_5/extensions/regress-348986.js                  # StackOverflow
+skip script js1_5/extensions/regress-355497.js                  # StackOverflow
+skip script js1_5/extensions/regress-420869-01.js               # Timeout
+skip script js1_5/extensions/regress-424683-01.js               # Timeout
+skip script js1_5/GC/regress-203278-2.js                        # Timeout
+skip script js1_5/GC/regress-348532.js                          # Timeout
+skip script js1_5/Regress/regress-159334.js                     # Timeout
+skip script js1_5/Regress/regress-234389.js                     # StackOverflow
+skip script js1_5/Regress/regress-303213.js                     # Heapspace
+skip script js1_5/Regress/regress-312588.js                     # Timeout
+skip script js1_5/Regress/regress-422348.js                     # Heapspace
+skip script js1_5/Regress/regress-96128-n.js                    # Timeout
+skip script js1_5/Regress/regress-96526-002.js                  # StackOverflow
+skip script js1_8/genexps/regress-380237-01.js                  # Timeout
+skip script js1_8_5/regress/no-array-comprehension-length-limit.js # Timeout
+skip script js1_8_5/extensions/recursion.js                     # StackOverflow
