@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Assignment xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../apidocs/org/mozilla/javascript/ast/Assignment.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <em class="jxr_comment">/*<em class="jxr_comment"> -*- Mode: java; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*-</em></em>
+<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_comment"> * This Source Code Form is subject to the terms of the Mozilla Public</em>
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <em class="jxr_comment"> * License, v. 2.0. If a copy of the MPL was not distributed with this</em>
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <em class="jxr_comment"> * file, You can obtain one at <a href="http://mozilla.org/MPL/2.0/." target="alexandria_uri">http://mozilla.org/MPL/2.0/.</a> */</em>
+<a class="jxr_linenumber" name="6" href="#6">6</a>   
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">package</strong> org.mozilla.javascript.ast;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <em class="jxr_javadoccomment"> * AST node representing the set of assignment operators such as {@code =},</em>
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <em class="jxr_javadoccomment"> * {@code *=} and {@code +=}.</em>
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../org/mozilla/javascript/ast/Assignment.html">Assignment</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../org/mozilla/javascript/ast/InfixExpression.html">InfixExpression</a> {
+<a class="jxr_linenumber" name="14" href="#14">14</a>  
+<a class="jxr_linenumber" name="15" href="#15">15</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/mozilla/javascript/ast/Assignment.html">Assignment</a>() {
+<a class="jxr_linenumber" name="16" href="#16">16</a>      }
+<a class="jxr_linenumber" name="17" href="#17">17</a>  
+<a class="jxr_linenumber" name="18" href="#18">18</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/mozilla/javascript/ast/Assignment.html">Assignment</a>(<strong class="jxr_keyword">int</strong> pos) {
+<a class="jxr_linenumber" name="19" href="#19">19</a>          <strong class="jxr_keyword">super</strong>(pos);
+<a class="jxr_linenumber" name="20" href="#20">20</a>      }
+<a class="jxr_linenumber" name="21" href="#21">21</a>  
+<a class="jxr_linenumber" name="22" href="#22">22</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/mozilla/javascript/ast/Assignment.html">Assignment</a>(<strong class="jxr_keyword">int</strong> pos, <strong class="jxr_keyword">int</strong> len) {
+<a class="jxr_linenumber" name="23" href="#23">23</a>          <strong class="jxr_keyword">super</strong>(pos, len);
+<a class="jxr_linenumber" name="24" href="#24">24</a>      }
+<a class="jxr_linenumber" name="25" href="#25">25</a>  
+<a class="jxr_linenumber" name="26" href="#26">26</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/mozilla/javascript/ast/Assignment.html">Assignment</a>(<strong class="jxr_keyword">int</strong> pos, <strong class="jxr_keyword">int</strong> len, <a href="../../../../org/mozilla/javascript/ast/AstNode.html">AstNode</a> left, <a href="../../../../org/mozilla/javascript/ast/AstNode.html">AstNode</a> right) {
+<a class="jxr_linenumber" name="27" href="#27">27</a>          <strong class="jxr_keyword">super</strong>(pos, len, left, right);
+<a class="jxr_linenumber" name="28" href="#28">28</a>      }
+<a class="jxr_linenumber" name="29" href="#29">29</a>  
+<a class="jxr_linenumber" name="30" href="#30">30</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/mozilla/javascript/ast/Assignment.html">Assignment</a>(<a href="../../../../org/mozilla/javascript/ast/AstNode.html">AstNode</a> left, <a href="../../../../org/mozilla/javascript/ast/AstNode.html">AstNode</a> right) {
+<a class="jxr_linenumber" name="31" href="#31">31</a>          <strong class="jxr_keyword">super</strong>(left, right);
+<a class="jxr_linenumber" name="32" href="#32">32</a>      }
+<a class="jxr_linenumber" name="33" href="#33">33</a>  
+<a class="jxr_linenumber" name="34" href="#34">34</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/mozilla/javascript/ast/Assignment.html">Assignment</a>(<strong class="jxr_keyword">int</strong> <strong class="jxr_keyword">operator</strong>, <a href="../../../../org/mozilla/javascript/ast/AstNode.html">AstNode</a> left,
+<a class="jxr_linenumber" name="35" href="#35">35</a>                        <a href="../../../../org/mozilla/javascript/ast/AstNode.html">AstNode</a> right, <strong class="jxr_keyword">int</strong> operatorPos) {
+<a class="jxr_linenumber" name="36" href="#36">36</a>          <strong class="jxr_keyword">super</strong>(<strong class="jxr_keyword">operator</strong>, left, right, operatorPos);
+<a class="jxr_linenumber" name="37" href="#37">37</a>      }
+<a class="jxr_linenumber" name="38" href="#38">38</a>  }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+
