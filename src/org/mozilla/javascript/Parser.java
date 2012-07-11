@@ -2059,7 +2059,7 @@ public class Parser
     private AstNode condExpr()
         throws IOException
     {
-        AstNode pn = orExpr();
+        AstNode pn = binaryExpr();
         if (matchToken(Token.HOOK)) {
             int line = ts.lineno;
             int qmarkPos = ts.tokenBeg, colonPos = -1;
@@ -2080,166 +2080,87 @@ public class Parser
         return pn;
     }
 
-    private AstNode orExpr()
-        throws IOException
-    {
-        AstNode pn = andExpr();
-        if (matchToken(Token.OR)) {
-            int opPos = ts.tokenBeg;
-            pn = new InfixExpression(Token.OR, pn, orExpr(), opPos);
+    private int binaryPred(int token) {
+        switch (token) {
+        case Token.OR:
+            return 0;
+        case Token.AND:
+            return 1;
+        case Token.BITOR:
+            return 2;
+        case Token.BITXOR:
+            return 3;
+        case Token.BITAND:
+            return 4;
+        case Token.EQ:
+        case Token.NE:
+        case Token.SHEQ:
+        case Token.SHNE:
+            return 5;
+        case Token.LT:
+        case Token.LE:
+        case Token.GT:
+        case Token.GE:
+        case Token.IN:
+        case Token.INSTANCEOF:
+            return 6;
+        case Token.LSH:
+        case Token.RSH:
+        case Token.URSH:
+            return 7;
+        case Token.ADD:
+        case Token.SUB:
+            return 8;
+        case Token.MUL:
+        case Token.DIV:
+        case Token.MOD:
+            return 9;
         }
-        return pn;
+        return -1;
     }
 
-    private AstNode andExpr()
+    private AstNode binaryExpr()
         throws IOException
     {
-        AstNode pn = bitOrExpr();
-        if (matchToken(Token.AND)) {
-            int opPos = ts.tokenBeg;
-            pn = new InfixExpression(Token.AND, pn, andExpr(), opPos);
-        }
-        return pn;
+        return binaryExpr(unaryExpr(), 0 /* = binaryPred(Token.OR) */);
     }
 
-    private AstNode bitOrExpr()
+    private AstNode binaryExpr(AstNode lhs, int minpred)
         throws IOException
     {
-        AstNode pn = bitXorExpr();
-        while (matchToken(Token.BITOR)) {
-            int opPos = ts.tokenBeg;
-            pn = new InfixExpression(Token.BITOR, pn, bitXorExpr(), opPos);
-        }
-        return pn;
-    }
-
-    private AstNode bitXorExpr()
-        throws IOException
-    {
-        AstNode pn = bitAndExpr();
-        while (matchToken(Token.BITXOR)) {
-            int opPos = ts.tokenBeg;
-            pn = new InfixExpression(Token.BITXOR, pn, bitAndExpr(), opPos);
-        }
-        return pn;
-    }
-
-    private AstNode bitAndExpr()
-        throws IOException
-    {
-        AstNode pn = eqExpr();
-        while (matchToken(Token.BITAND)) {
-            int opPos = ts.tokenBeg;
-            pn = new InfixExpression(Token.BITAND, pn, eqExpr(), opPos);
-        }
-        return pn;
-    }
-
-    private AstNode eqExpr()
-        throws IOException
-    {
-        AstNode pn = relExpr();
+        // Recursive-descent parsers require multiple levels of recursion to
+        // parse binary expressions, to avoid this we're using precedence
+        // climbing here
         for (;;) {
-            int tt = peekToken(), opPos = ts.tokenBeg;
-            switch (tt) {
-              case Token.EQ:
-              case Token.NE:
-              case Token.SHEQ:
-              case Token.SHNE:
-                consumeToken();
-                int parseToken = tt;
-                if (compilerEnv.getLanguageVersion() == Context.VERSION_1_2) {
-                    // JavaScript 1.2 uses shallow equality for == and != .
-                    if (tt == Token.EQ)
-                        parseToken = Token.SHEQ;
-                    else if (tt == Token.NE)
-                        parseToken = Token.SHNE;
-                }
-                pn = new InfixExpression(parseToken, pn, relExpr(), opPos);
-                continue;
+            int tt = peekToken();
+            if (tt == Token.IN && inForInit) {
+                break;
             }
-            break;
-        }
-        return pn;
-    }
-
-    private AstNode relExpr()
-        throws IOException
-    {
-        AstNode pn = shiftExpr();
-        for (;;) {
-            int tt = peekToken(), opPos = ts.tokenBeg;
-            switch (tt) {
-              case Token.IN:
-                if (inForInit)
+            int pred = binaryPred(tt);
+            if (pred < minpred) {
+                break;
+            }
+            int opPos = ts.tokenBeg;
+            consumeToken();
+            AstNode rhs = unaryExpr();
+            for (;;) {
+                int pred2 = binaryPred(peekToken());
+                if (pred2 <= pred) {
                     break;
-                // fall through
-              case Token.INSTANCEOF:
-              case Token.LE:
-              case Token.LT:
-              case Token.GE:
-              case Token.GT:
-                consumeToken();
-                pn = new InfixExpression(tt, pn, shiftExpr(), opPos);
-                continue;
+                }
+                rhs = binaryExpr(rhs, pred2);
             }
-            break;
-        }
-        return pn;
-    }
-
-    private AstNode shiftExpr()
-        throws IOException
-    {
-        AstNode pn = addExpr();
-        for (;;) {
-            int tt = peekToken(), opPos = ts.tokenBeg;
-            switch (tt) {
-              case Token.LSH:
-              case Token.URSH:
-              case Token.RSH:
-                consumeToken();
-                pn = new InfixExpression(tt, pn, addExpr(), opPos);
-                continue;
+            if ((tt == Token.EQ || tt == Token.NE)
+                    && compilerEnv.getLanguageVersion() == Context.VERSION_1_2) {
+                // JavaScript 1.2 uses shallow equality for == and != .
+                if (tt == Token.EQ)
+                    tt = Token.SHEQ;
+                else if (tt == Token.NE)
+                    tt = Token.SHNE;
             }
-            break;
+            lhs = new InfixExpression(tt, lhs, rhs, opPos);
         }
-        return pn;
-    }
-
-    private AstNode addExpr()
-        throws IOException
-    {
-        AstNode pn = mulExpr();
-        for (;;) {
-            int tt = peekToken(), opPos = ts.tokenBeg;
-            if (tt == Token.ADD || tt == Token.SUB) {
-                consumeToken();
-                pn = new InfixExpression(tt, pn, mulExpr(), opPos);
-                continue;
-            }
-            break;
-        }
-        return pn;
-    }
-
-    private AstNode mulExpr()
-        throws IOException
-    {
-        AstNode pn = unaryExpr();
-        for (;;) {
-            int tt = peekToken(), opPos = ts.tokenBeg;
-            switch (tt) {
-              case Token.MUL:
-              case Token.DIV:
-              case Token.MOD:
-                consumeToken();
-                pn = new InfixExpression(tt, pn, unaryExpr(), opPos);
-                continue;
-            }
-            break;
-        }
-        return pn;
+        return lhs;
     }
 
     private AstNode unaryExpr()
